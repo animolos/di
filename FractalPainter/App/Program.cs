@@ -51,7 +51,7 @@ namespace FractalPainting.App
                     .InSingletonScope();
 
                 container.Bind<IImageDirectoryProvider>()
-                    .ToMethod(context => (IImageDirectoryProvider) context.Kernel.Get<AppSettings>());
+                    .ToMethod(context => context.Kernel.Get<AppSettings>());
 
                 container.Bind<ImageSettings>()
                     .ToMethod(context => context.Kernel.Get<AppSettings>().ImageSettings)
